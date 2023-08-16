@@ -8,7 +8,7 @@ This tool is intended to help with this process. It helps you to understand Spot
 - Auditory. Listen to the song and the beat WAV play together to see whether the Spotify-identified beats play on the beat of your copy of the song. If not, the timestamps in Spotify's analysis file may need to be shifted.
 - Visual. If you identify the song's tempo/BPM, you can (1) generate a metronome audio track that plays a tick at that tempo and (2) align that metronome audio track to the beat of the song. Then you can visually compare the waveforms of the metronome audio track with those of the beat WAV audio file. The distance between the beats in these waveforms is a clue about how much you need to shift the timestamps in Spotify's audio analysis file. Some helpful resources:
   - [How to find a song's tempo/BPM with ArrowVortex](https://youtu.be/Z49UKFefu5c) (video)
-  - [How to add a metronome track in Audacity](https://bsmg.wiki/mapping/basic-audio.html#add-a-click-track)
+  - [How to add a metronome track in Audacity](https://bsmg.wiki/mapping/basic-audio.html#add-a-click-track) (the relevant section is titled "Add a Click Track")
 
 ## Usage
 `node main.js <spotify-analysis.json> <beat-output.wav>`
