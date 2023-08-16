@@ -13,15 +13,15 @@ This repo includes [`/data/gangnamStyleAnalysis.json`](./data/gangnamStyleAnalys
 This repo also includes [`/tools/spotifyAudioAnalysisClient/`](./tools/spotifyAudioAnalysisClient/), a tool that illustrates how to use Spotify's audio analysis web API.
 
 ## Repo layout
-- [`./js/`](./js/): Files related to the JavaScript implementation of the Infinite Jukebox algorithm.
+- [`/js/`](./js/): Files related to the JavaScript implementation of the Infinite Jukebox algorithm.
   - [`algorithm/`](./js/algorithm/): The JavaScript implementation of the algorithm.
   - [`examples/`](./js/examples/): Example usage of the algorithm's API.
     - [`basic/`](./js/examples/basic/): A bare-bones example.
     - [`playerAndVisualizer/`](./js/examples/playerAndVisualizer/): A more substantial example that shows how to use the algorithm to play audio and visualize the beat of the song that's currently playing.
-- [`./tools/`](./tools/): Tools that come in handy when making use of the algorithm.
+- [`/tools/`](./tools/): Tools that come in handy when making use of the algorithm.
   - [`spotifyAudioAnalysisClient/`](./tools/spotifyAudioAnalysisClient/): Illustrates how to use Spotify's audio analysis web API.
   - [`spotifyBeatMetronome/`](./tools/spotifyBeatMetronome/): Generates a WAV audio file which plays a tick at each beat identified by Spotify's audio analysis. Useful when trying to figure out how to get your copy of the song in sync with Spotify's audio analysis.
-- [`./data/gangnamStyleAnalysis.json`](./data/gangnamStyleAnalysis.json): The result of calling Spotify's audio analysis web API on the song Gangnam Style. You can give this file as input to the examples and tools in this repo to see how they operate.
+- [`/data/gangnamStyleAnalysis.json`](./data/gangnamStyleAnalysis.json): The result of calling Spotify's audio analysis web API on the song Gangnam Style. You can give this file as input to the examples and tools in this repo to see how they operate.
 
 ## Credits
 The original implementation of The Infinite Jukebox is by [Paul Lamere](https://musicmachinery.com/2012/11/12/the-infinite-jukebox/).
