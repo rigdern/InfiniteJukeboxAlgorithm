@@ -67,18 +67,18 @@ function fetchAudioAnalysis(spotifyAccessToken, spotifyTrackId) {
 }
 
 async function main(args) {
-  if (args.length !== 1) {
-    console.log('Usage: node main.js <spotify-track-id>');
+  if (args.length !== 2) {
+    console.log('Usage: node main.js <spotify-track-id> <spotify-analysis-output.json>');
     return;
   }
 
-  const [spotifyTrackId] = args;
+  const [spotifyTrackId, spotifyAnalysisPath] = args;
 
   const spotifyAccessToken = await getSpotifyAccessToken();
 
   try {
     const audioAnalysis = await fetchAudioAnalysis(spotifyAccessToken, spotifyTrackId);
-    console.log(pp(audioAnalysis));
+    await fsPromises.writeFile(spotifyAnalysisPath, pp(audioAnalysis), { encoding: 'utf8' });
   } catch (error) {
     if (error instanceof SpotifyError && error.details?.status === 401) {
       // 401 Unauthorized error. Likely access token expired. Clear the old one.

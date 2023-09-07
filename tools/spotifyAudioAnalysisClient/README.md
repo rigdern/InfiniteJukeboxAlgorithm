@@ -12,11 +12,11 @@ Illustrates how to use [Spotify's audio analysis web API](https://developer.spot
         ```
 
 ## Usage
-`node main.js <spotify-track-id>`
+`node main.js <spotify-track-id> <spotify-analysis-output.json>`
 
 For example, the Spotify track ID for Gangnam Style is `03UrZgTINDqvnUMbbIMhql` so you can fetch Spotify's audio analysis for it and store it in `gangnamStyleAnalysis.json` with this command:
 
-`node main.js 03UrZgTINDqvnUMbbIMhql > gangnamStyleAnalysis.json`
+`node main.js 03UrZgTINDqvnUMbbIMhql gangnamStyleAnalysis.json`
 
 ## Looking up a Spotify track ID
 1. Find the song of interest in the [Spotify web app](https://open.spotify.com/).
