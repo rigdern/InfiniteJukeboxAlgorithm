@@ -5,9 +5,14 @@
 import fsPromises from 'fs/promises';
 import fetch from 'node-fetch';
 import { pp, readFileIfExists } from './util.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 // For help in getting these, see https://developer.spotify.com/documentation/web-api/tutorials/getting-started
 import { clientId, clientSecret } from './creds/spotify.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 class SpotifyError extends Error {
   constructor(message, details) {
@@ -16,7 +21,7 @@ class SpotifyError extends Error {
   }
 }
 
-const spotifyAccessTokenPath = './creds/spotifyAccessToken.json';
+const spotifyAccessTokenPath = path.join(__dirname, './creds/spotifyAccessToken.json');
 
 async function getSpotifyAccessToken() {
   const content = await readFileIfExists(spotifyAccessTokenPath, { encoding: 'utf8' });
