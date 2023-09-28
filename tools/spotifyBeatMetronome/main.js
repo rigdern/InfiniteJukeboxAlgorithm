@@ -4,6 +4,13 @@
 //
 
 import fsPromises from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const metronomeTickPath = path.join(__dirname, './metronome-tick.wav');
 
 function assert(pred, msg) {
   if (!pred) {
@@ -160,7 +167,7 @@ async function main(args) {
   const spotifyAnalysis = JSON.parse(content);
   const beats = spotifyAnalysis.beats;
 
-  const tickBuffer = await fsPromises.readFile('./metronome-tick.wav');
+  const tickBuffer = await fsPromises.readFile(metronomeTickPath);
   const tickWav = parseWav(tickBuffer);
 
   const builder = new WavTickBuilder(tickWav, tickWav.data);
